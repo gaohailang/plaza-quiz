@@ -1,0 +1,53 @@
+<template name="VonVonEdit">
+  {{> adminAlert}}
+  <div class="box box-default vonvon-quiz-view">
+    <h3>问题描述：</h3>
+    {{#with admin_current_doc.quiz}}
+    <h4>{{title}}</h4>
+    <p>{{desc}}</p>
+    <img src="{{image_url}}" alt="问题配图">
+    {{/with}}
+    <h3>问题列表：</h3>
+    <ul>
+      {{#each admin_current_doc.questions}}
+        <li>
+          Type: {{type}} - {{text}}
+          <!-- {{#if extra}}
+            <p>{{print extra}}</p>
+          {{/if}} -->
+          {{#if image_url}}
+            <img src="{{image_url}}">
+          {{/if}}
+          {{#if choiceIds.length}}
+          <h5>选项列表：</h5>
+          <ul>
+            {{#each getQChoice choiceIds admin_current_doc}}
+              <li>
+                Type: {{type}} - {{text}}
+                {{#if image_url}}
+                  <img src="{{image_url}}">
+                {{/if}}
+              </li>
+            {{/each}}
+          </ul>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class="box box-default">
+    <div class="box-body">
+    {{> quickForm id="admin_update" collection="VvQuizs" doc=admin_current_doc fields=fields buttonContent='Update'}}
+    </div>
+  </div>
+  <!-- {{#if adminTemplate admin_collection_name 'edit'}}
+    {{#with adminTemplate admin_collection_name 'edit'}}
+    {{> UI.dynamic template=name data=data }}
+    {{/with}}
+  {{else}}
+  {{/if}} -->
+</template>
+
+<template name="imgUrlPreview">
+  <a href="{{file.url}}">{{file.original.name}}</a>
+</template>

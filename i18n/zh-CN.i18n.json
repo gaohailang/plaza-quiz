@@ -1,10 +1,10 @@
 {
 
 	/*Config*/
-	"configName": "我的应用",
-	"configTitle": "制作Meteor App. 更快速.",
+	"configName": "趣问管理后台",
+	"configTitle": "一站式趣问Quiz创建管理. 更快速.",
 	"configSubtitle": "畅快建立美观实用的Meteor Apps",
-	
+
 	/*Home*/
 	"getstarted": "开始",
 	"dashboard": "控制面板",
@@ -70,7 +70,7 @@
 	"profilePicture": "资料图片"
 
 
-	
+
 
 
 }

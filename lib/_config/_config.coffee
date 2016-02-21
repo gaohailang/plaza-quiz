@@ -4,7 +4,7 @@
 @Config =
 
 	# Basic Details
-	name: 'My App'
+	name: 'Quiz Plaza'
 	title: ->
 			TAPi18n.__ 'configTitle'
 	subtitle: ->
@@ -21,9 +21,9 @@
 
 	# Username - if true, users are forced to set a username
 	username: false
-	
+
 	# Localisation
-	defaultLanguage: 'en'
+	defaultLanguage: 'zh-CN'
 	dateFormat: 'D/M/YYYY'
 
 	# Meta / Extenrnal content
@@ -36,21 +36,21 @@
 		name: 'Meteor Factory'
 		url: 'http://benjaminpeterjones.com'
 
-	about: 'http://meteorfactory.io'
-	blog: 'http://learn.meteorfactory.io'
+	about: 'http://blog.sivagao.com'
+	blog: 'http://sivagao.com'
 
 	socialMedia:
 		facebook:
-			url: 'http://facebook.com/benjaminpeterjones'
+			url: 'http://facebook.com/gaohailang'
 			icon: 'facebook'
 		twitter:
-			url: 'http://twitter.com/BenPeterJones'
+			url: 'http://twitter.com/ghlndsl'
 			icon: 'twitter'
 		github:
-			url: 'http://github.com/yogiben'
+			url: 'http://github.com/gaohailang'
 			icon: 'github'
 		info:
-			url: 'http://meteorfactory.io'
+			url: 'http://sivagao.com'
 			icon: 'link'
 
 	#Routes
