@@ -1,5 +1,6 @@
 @AdminConfig =
   name: Config.name
+  adminEmails: ['ghlndsl@126.com', 'sivagao@126.com']
   collections:
     Posts:
       color: 'red'
@@ -39,6 +40,7 @@
         edit:
           name: "VonVonEdit"
           data:
+            doc: Meteor.isClient && Session.get('admin_doc')
             fields: ["quiz", "questions", "choices"]
   dashboard:
     homeUrl: '/dashboard'

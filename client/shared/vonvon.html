@@ -10,8 +10,8 @@
     <h3>问题列表：</h3>
     <ul>
       {{#each admin_current_doc.questions}}
-        <li>
-          Type: {{type}} - {{text}}
+        <li class="question-li" data-question-idx="{{@index}}">
+          {{@index}}-Type: {{type}} - {{text}}
           <!-- {{#if extra}}
             <p>{{print extra}}</p>
           {{/if}} -->
@@ -19,11 +19,11 @@
             <img src="{{image_url}}">
           {{/if}}
           {{#if choiceIds.length}}
-          <h5>选项列表：</h5>
+          <h5>选项列表：</h5> - {{getQAns @index admin_current_doc}}
           <ul>
             {{#each getQChoice choiceIds admin_current_doc}}
-              <li>
-                Type: {{type}} - {{text}}
+              <li class="choice-li">
+                Type: {{type}} - {{text}} - {{id}}
                 {{#if image_url}}
                   <img src="{{image_url}}">
                 {{/if}}
@@ -34,6 +34,13 @@
         </li>
       {{/each}}
     </ul>
+    <p>
+      <button class="answer-submit">提交答案</button>
+    </p>
+    {{getResult}}
+    {{#if result}}
+      {{result}}
+    {{/if}}
   </div>
   <div class="box box-default">
     <div class="box-body">
